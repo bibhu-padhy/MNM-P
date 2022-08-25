@@ -1,14 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NhostClient, NhostReactProvider } from "@nhost/react";
-
 import "./App.css";
 import Home from "./Home";
 import Auth from "./Auth";
 import ProtectedRoute from "./common/components/ProtectedRoute";
 
 const nhost = new NhostClient({
-  subdomain: "zdiptnswmcxrfljyqmgj",
-  region: "ap-south-1",
+  subdomain: import.meta.env.VITE_NHOST_SUBDOMAIN,
+  region: import.meta.env.VITE_NHOST_REGION,
 });
 
 function App() {
